@@ -236,6 +236,7 @@ open class DGRunkeeperSwitch: UIControl {
     override open func layoutSubviews() {
         super.layoutSubviews()
         
+        #if !TARGET_INTERFACE_BUILDER
         let selectedBackgroundWidth = bounds.width / CGFloat(titleLabels.count) - selectedBackgroundInset * 2.0
         selectedBackgroundView.frame = CGRect(x: selectedBackgroundInset + CGFloat(selectedIndex) * (selectedBackgroundWidth + selectedBackgroundInset * 2.0), y: selectedBackgroundInset, width: selectedBackgroundWidth, height: bounds.height - selectedBackgroundInset * 2.0)
         
@@ -258,6 +259,7 @@ open class DGRunkeeperSwitch: UIControl {
             label.frame = frame
             selectedLabel.frame = frame
         }
+        #endif
     }
     
 }
